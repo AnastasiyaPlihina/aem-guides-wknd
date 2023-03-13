@@ -1,10 +1,10 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import com.adobe.aem.guides.wknd.core.models.Byline;
 import com.google.common.collect.ImmutableList;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.Mock;
 
-import com.adobe.aem.guides.wknd.core.models.Byline;
 import com.adobe.cq.wcm.core.components.models.Image;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;

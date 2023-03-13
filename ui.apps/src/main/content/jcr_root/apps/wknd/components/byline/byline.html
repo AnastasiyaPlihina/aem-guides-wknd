@@ -1,3 +1,4 @@
+<!--/* byline.html */-->
 <div data-sly-use.byline="com.adobe.aem.guides.wknd.core.models.Byline"
      data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
      data-sly-test.hasContent="${!byline.empty}"
@@ -8,4 +9,3 @@
     <p class="cmp-byline__occupations">${byline.occupations @ join=', '}</p>
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
-
