@@ -3,6 +3,9 @@
      data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
      data-sly-test.hasContent="${!byline.empty}"
      class="cmp-byline">
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+        <sly data-sly-call="${clientLib.all @ categories='wknd.byline'}"></sly>
+    </sly>
     <div class="cmp-byline__image"
          data-sly-resource="${ '.' @ resourceType = 'core/wcm/components/image/v2/image' }"></div>
     <h2 class="cmp-byline__name">${byline.name}</h2>
