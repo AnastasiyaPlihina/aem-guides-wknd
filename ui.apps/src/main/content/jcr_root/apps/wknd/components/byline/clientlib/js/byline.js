@@ -13,12 +13,23 @@
             console.log("{}:{}:{}", max, min, items);
             if (items > max) {
                 domItems.last().remove();
-                return "You can add only" + max + ".You can trying to add" + items
+                return "You can add only " + max + ".You can trying to add " + items
             }
             if (items < min) {
-                return "You add" + min
+                return "You need to add " + min
             }
         }
     });
 
+    registry.register("foundation.validation.validator", {
+        selector: "[data-validation=geeks-name-validation]",
+        validate: function (element) {
+            let el = $(element);
+            let pattern =/[\d]/;
+            let value = el.val();
+            if(pattern.test(value)) {
+                return "Please, add only letters in Name field!"
+            }
+        }
+    });
 })(jQuery, Coral);
