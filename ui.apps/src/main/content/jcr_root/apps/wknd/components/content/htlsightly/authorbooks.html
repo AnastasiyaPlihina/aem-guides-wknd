@@ -1,0 +1,17 @@
+<div data-sly-template.authorBooks="${@ books}">
+    <div data-sly-list.item="${books.bookDetailsWithMap}">
+        <p>Book : <b>${item.bookname}</b></p>
+        <p>Subject : <b>${item.booksubject}</b></p>
+    </div>
+</div>
+<div data-sly-template.booksMap="${@ books}">
+    <div data-sly-list.item="${books.booksMap}">
+        <p>key : <b>${item}</b></p>
+        <p>value : <b>${books.booksMap[item]}</b></p>
+    </div>
+</div>
+<div data-sly-template.booksList="${@ books}">
+    <div data-sly-list.item="${books.books}">
+        <p>Book ##${itemList.count}: <b>${item}</b></p>
+    </div>
+</div>
