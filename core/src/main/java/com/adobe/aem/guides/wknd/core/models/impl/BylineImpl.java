@@ -10,6 +10,8 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import java.util.List;
 )
 public class BylineImpl implements Byline {
     protected static final String RESOURCE_TYPE = "wknd/components/byline";
-
+    private static final Logger log = LoggerFactory.getLogger(BylineImpl.class);
     @OSGiService
     private ModelFactory modelFactory;
     @Self
@@ -33,6 +35,7 @@ public class BylineImpl implements Byline {
     private String name;
     @ValueMapValue
     private List<String> occupations;
+
     private Image image;
 
     @PostConstruct
@@ -40,6 +43,11 @@ public class BylineImpl implements Byline {
         image = modelFactory.getModelFromWrappedRequest(request,
                 request.getResource(),
                 Image.class);
+        log.trace("\nTrace test");
+        log.debug("\nDebug test");
+        log.info("\nInfo test");
+        log.warn("\nWarning test");
+        log.error("\nError test");
     }
     @Override
     public String getName() {

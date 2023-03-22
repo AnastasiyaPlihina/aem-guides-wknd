@@ -114,17 +114,15 @@ public class BylineImplTest {
     @Test
     public void testIsEmpty_WithoutImageSrc() {
         ctx.currentResource("/content/byline");
-
         when(image.getSrc()).thenReturn("");
-
         Byline byline = ctx.request().adaptTo(Byline.class);
-
         assertTrue(byline.isEmpty());
     }
 
     @Test
     public void testIsNotEmpty() {
         ctx.currentResource("/content/byline");
+
         when(image.getSrc()).thenReturn("/content/bio.png");
 
         Byline byline = ctx.request().adaptTo(Byline.class);

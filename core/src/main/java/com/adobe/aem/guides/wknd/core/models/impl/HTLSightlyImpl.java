@@ -56,10 +56,10 @@ public class HTLSightlyImpl implements HTLSightly {
         try {
             Resource bookDetail = resource.getChild("bookdetailswithmap");
             if (bookDetail != null) {
-                for (Resource bool : bookDetail.getChildren()) {
+                for (Resource book : bookDetail.getChildren()) {
                     Map<String, String> bookMap = new HashMap<>();
-                    bookMap.put("bookname", bookDetail.getValueMap().get("bookname", String.class));
-                    bookMap.put("booksubject", bookDetail.getValueMap().get("booksubject", String.class));
+                    bookMap.put("bookname", book.getValueMap().get("bookname", String.class));
+                    bookMap.put("booksubject", book.getValueMap().get("booksubject", String.class));
                     bookDetailMap.add(bookMap);
                 }
             }
