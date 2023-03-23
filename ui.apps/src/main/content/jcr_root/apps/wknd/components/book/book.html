@@ -1,0 +1,16 @@
+<div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.Book"
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+    <div>
+        <p><b>${model.title}</b></p>
+    </div>
+    <div>
+        <p>First name : <b>${model.fname}</b></p>
+    </div>
+    <div>
+        <p>Last name : <b>${model.lname}</b></p>
+    </div>
+    <p><b>Books</b></p>
+    <ul data-sly-list.items="${model.books}">
+        <p>${items.bookName} - ${items.yearOfCreation}</p>
+    </ul>
+</div>
