@@ -1,0 +1,5 @@
+<div data-sly-template.navigation="${@ navigation}">
+    <ul class="cmp-navigation__item" data-sly-repeat="${navigation.items}">
+        <a class="cmp-navigation__item-link" href="${item.path}.html">${item.title}</a>
+    </ul>
+</div>
