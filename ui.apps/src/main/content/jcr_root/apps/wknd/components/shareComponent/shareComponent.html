@@ -1,0 +1,12 @@
+<div data-sly-use.share="com.adobe.aem.guides.wknd.core.models.ShareModel"
+     class="cmp-share">
+    <dl>
+        <dt>${share.title}</dt>
+        <div class="cmp-share__item" data-sly-list.resouses="${share.resources}">
+        <dd> <a class="cmp-share__item-link" href="${resouses.link}"><b>${resouses.name}</b></a></dd>
+        </div>
+    </dl>
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientLib.css @ categories='wknd.sharing'}"></sly>
+</sly>
