@@ -1,0 +1,7 @@
+<div data-sly-use.testModel="com.adobe.aem.guides.wknd.core.models.TestComponentModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+    <div data-sly-list.item="${testModel.words}">
+        <p>${item.word}</p>
+    </div>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!testModel.words}"></sly>

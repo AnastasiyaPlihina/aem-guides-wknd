@@ -18,7 +18,7 @@ import java.util.List;
         resourceType = {ShareModelImpl.RESOURCE_TYPE},
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ShareModelImpl implements ShareModel {
-    protected static final String RESOURCE_TYPE = "wknd/components/sharecomponent";
+    protected static final String RESOURCE_TYPE = "wknd/components/shareComponent";
 
     @ValueMapValue
     private String title;
