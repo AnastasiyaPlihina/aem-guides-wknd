@@ -4,7 +4,10 @@
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Share component"
-          sling:resourceType="cq/gui/components/authoring/dialog">
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[core.wcm.components.image.v2.editor]"
+          helpPath="https://www.adobe.com/go/aem_cmp_image_v2"
+          trackingFeature="core-components:image:v2">
     <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
@@ -18,7 +21,12 @@
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldLabel="Title of Component"
                             name="./title"/>
-
+<!--                    <file-->
+<!--                            jcr:primaryType="nt:unstructured"-->
+<!--                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"-->
+<!--                            fileReferenceParameter="./fileReference"-->
+<!--                            mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"-->
+<!--                            name="./image"/>-->
                     <resources
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -30,12 +38,15 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/container"
                                 name="./resources">
                             <items jcr:primaryType="nt:unstructured">
-                                <contentTitle
+                                <socialMediaLogo
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Social Media Name"
-                                        name="./socialMediaName"/>
-                                <text
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        fieldLabel="Social Media Logo"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                        name="./socialMediaLogo"/>
+                                <socialMediaLink
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="Social Media Link"
