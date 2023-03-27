@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="nt:unstructured"
-    jcr:title="Test Words Component"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Test Words Component"
+          sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <column
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/container">
+            <columns
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    maximized="{Boolean}false">
                 <items jcr:primaryType="nt:unstructured">
-                    <sortedWords
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        checked="${not empty cqDesign.sortedWords ? cqDesign.sortedWords : true}"
-                        fieldDescription="Sort words alphabetically"
-                        name="./sortedWords"
-                        text="Sort words alphabetically"
-                        uncheckedValue="{Boolean}false"
-                        value="{Boolean}true"/>
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <words
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                    name="./words"
+                                    useFixedInlineToolbar="{Boolean}true">
+                            </words>
+<!--                            <words-->
+<!--                                    jcr:primaryType="nt:unstructured"-->
+<!--                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"-->
+<!--                                    composite="true"-->
+<!--                                    fieldLabel="Words"-->
+<!--                                    required="{Boolean}false">-->
+<!--                                <field-->
+<!--                                        jcr:primaryType="nt:unstructured"-->
+<!--                                        sling:resourceType="granite/ui/components/coral/foundation/container"-->
+<!--                                        name="./words">-->
+<!--                                    <items jcr:primaryType="nt:unstructured">-->
+<!--                                        <word-->
+<!--                                                jcr:primaryType="nt:unstructured"-->
+<!--                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+<!--                                                fieldLabel="Word"-->
+<!--                                                name="./word"/>-->
+<!--                                    </items>-->
+<!--                                </field>-->
+<!--                            </words>-->
+                            <sortedWords
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    checked="${not empty cqDesign.sortedWords ? cqDesign.sortedWords : true}"
+                                    fieldDescription="Sort words alphabetically"
+                                    name="./sortedWords"
+                                    text="Sort words alphabetically"
+                                    uncheckedValue="{Boolean}false"
+                                    value="{Boolean}true"/>
+                        </items>
+                    </column>
                 </items>
-            </column>
+            </columns>
         </items>
     </content>
 </jcr:root>

@@ -18,6 +18,8 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -27,28 +29,34 @@ import java.util.List;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TestComponentModelImpl implements TestComponentModel {
     protected static final String RESOURCE_TYPE = "wknd/components/testComponent";
-    @Self
-    private SlingHttpServletRequest request;
-    @Inject
-    @Via("resource")
-    private List<WordItems> words;
+    //    @Inject
+//    @Via("resource")
+//    private List<WordItems> words;
+    @ValueMapValue
+    private String words;
     @ValueMapValue
     private boolean sortedWords;
 
-    @PostConstruct
-    private void init() {
-        ComponentContext componentContext = WCMUtils.getComponentContext(request);
-        if (componentContext != null) {
-            Toolbar toolbar = componentContext.getEditContext().getEditConfig().getToolbar();
-            toolbar.add(EditAction.EDIT);
-            toolbar.add(EditAction.DELETE);
-        }
-    }
+
+//    @Override
+//    public List<WordItems> getWords() {
+//        if (sortedWords) {
+//            words.sort(Comparator.comparing(WordItems::getWord));
+//        }
+//        return words;
+//    }
 
     @Override
-    public List<WordItems> getWords() {
+    public String getWords() {
         if (sortedWords) {
-            words.sort(Comparator.comparing(WordItems::getWord));
+            String replaceWords = words.replace("<p>", "").replace("</p>", "");
+            String[] wordsArray = replaceWords.split(" ");
+            Arrays.sort(wordsArray);
+            StringBuilder sortedWords = new StringBuilder("<p>");
+            for (String word : wordsArray) {
+                sortedWords.append(word).append(" ");
+            }
+            return sortedWords.append("</p>").toString();
         }
         return words;
     }
