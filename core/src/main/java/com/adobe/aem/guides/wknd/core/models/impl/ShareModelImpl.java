@@ -1,10 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
-import com.adobe.aem.guides.wknd.core.models.Book;
-import com.adobe.aem.guides.wknd.core.models.BookItems;
 import com.adobe.aem.guides.wknd.core.models.ShareModel;
-import com.adobe.aem.guides.wknd.core.models.SocialMedia;
-import com.adobe.cq.wcm.core.components.models.Image;
+import com.adobe.aem.guides.wknd.core.models.ShareResource;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -12,7 +9,6 @@ import org.apache.sling.models.annotations.Via;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.inject.Inject;
-import java.awt.*;
 import java.util.List;
 
 @Model(adaptables = {SlingHttpServletRequest.class},
@@ -26,7 +22,7 @@ public class ShareModelImpl implements ShareModel {
     private String title;
     @Inject
     @Via("resource")
-    private List<SocialMedia> resources;
+    private List<ShareResource> resources;
 
     @Override
     public String getTitle() {
@@ -34,7 +30,7 @@ public class ShareModelImpl implements ShareModel {
     }
 
     @Override
-    public List<SocialMedia> getResources() {
+    public List<ShareResource> getResources() {
         return resources;
     }
 }
