@@ -1,0 +1,100 @@
+.c-featured-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.c-featured-cards .s-card:first-child, .c-featured-cards .s-card:nth-child(2) {
+    width: calc(50% - 2.41rem);
+}
+
+.c-featured-cards .s-card {
+    margin: 0 1.2rem 2.4rem;
+    background-color: #fff;
+    width: calc(100% / 3 - 2.41rem);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.c-featured-cards .s-card__image {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.c-featured-cards .s-card__image .s-cloudinary-image {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    max-width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.c-featured-cards .s-card__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 2.5rem;
+}
+
+.c-featured-cards .s-card-text {
+    font: 300 1.2rem / 1 Lucida Sans Unicode, Lucida Grande, sans-serif;
+    color: #303030;
+    margin: 0 3rem 0 0;
+}
+
+.c-featured-cards .s-card:first-child .s-card-button, .c-featured-cards .s-card:nth-child(2) .s-card-button {
+    min-width: 15.2rem;
+    height: 3.5rem;
+    padding: 0.3rem;
+}
+
+.c-featured-cards .s-card-button {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #004b87;
+    border-radius: 10rem;
+    transition: background-color 150ms ease-in-out;
+}
+
+.c-featured-cards .s-card:first-child .s-card-button__text, .c-featured-cards .s-card:nth-child(2) .s-card-button__text {
+    display: block;
+}
+
+.c-featured-cards .s-card-button__text {
+    font: 700 1.6rem / 0.8 Lucida Sans Unicode, Lucida Grande, sans-serif;
+    color: #fff;
+    margin: 0.2rem auto 0;
+}
+
+.c-featured-cards .s-card-button__icon {
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 50%;
+    background: url(https://www.whs.com/etc/designs/whs/img/icon-triangle.svg) center center no-repeat;
+
+}
+
+.c-featured-cards .s-card:first-child .s-card-button__icon, .c-featured-cards .s-card:nth-child(2) .s-card-button__icon {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+

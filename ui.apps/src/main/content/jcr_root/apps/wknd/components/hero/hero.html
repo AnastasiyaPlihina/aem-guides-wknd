@@ -1,0 +1,19 @@
+<div class="m-hero">
+    <div class="c-hero">
+        <div class="s-swiper">
+            <div class="s-swiper__container">
+                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+                        <div class="s-swiper-text">
+                            <div class="s-swiper-text__title">${properties.jcr:title}</div>
+                            <div class="s-swiper-text__text">${properties.alt}</div>
+                        </div>
+                        <a class="s-swiper__link" href="${properties.linkURL}"><span>READ MORE</span></a>
+                        <img class="s-cloudinary-image" src="${properties.fileReference}"  alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientLib.css @ categories='wknd.hero'}"></sly>
+</sly>

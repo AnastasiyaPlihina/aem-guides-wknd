@@ -1,0 +1,26 @@
+<div data-sly-use.cards="com.adobe.aem.guides.wknd.core.models.CardsModel">
+    <div class="c-featured-cards__container">
+        <div class="c-featured-cards">
+            <div class="s-card repeat" data-sly-repeat.resources="${cards.resources}">
+                <div class="s-card__image">
+                    <img class="s-cloudinary-image" src="${resources.imageSrc}" alt="">
+                </div>
+                <div class="s-card__description">
+                    <div class="s-card-text">
+                        <div>${resources.text}</div>
+                    </div>
+                    <a href="${resources.link}" class="s-card-button">
+                        <div class="s-card-button__icon">
+                        </div>
+                        <div data-sly-test="${resourcesList.count <= 2}">
+                            <div class="s-card-button__text">Watch</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientLib.css @ categories='wknd.cards'}"></sly>
+</sly>
